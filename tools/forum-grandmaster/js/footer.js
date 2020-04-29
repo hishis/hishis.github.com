@@ -47,7 +47,12 @@ const app = new Vue({
                 // console.log('Cancel')
             }).onDismiss(() => {
                 // console.log('I am triggered on both OK and Cancel')
-                window.location.reload();
+                window.opener = null;
+                window.open('', '_self');
+                window.close();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 100);
             });
         },
         handleSettingsSave () {
