@@ -25,7 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.9.16/dist/quasar.umd.min.js"></script>
     <script src="/js/common.js"></script>
-    <div id="app" class="animated fadeInDown">
+    <div id="app" class="animated fadeIn">
         <div class="q-pa-md">
             <q-layout view="lHh lpr lFf" container style="height: 400px" class="shadow-2 rounded-borders">
                 <q-header elevated>
@@ -82,7 +82,7 @@
                                     <q-separator></q-separator>
 
                                     <q-item clickable v-close-popup>
-                                        <q-item-section>Quit</q-item-section>
+                                        <q-item-section @click="handleClose">Quit</q-item-section>
                                     </q-item>
                                 </q-list>
                             </q-menu>

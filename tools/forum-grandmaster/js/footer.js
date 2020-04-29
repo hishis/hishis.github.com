@@ -26,11 +26,8 @@ const app = new Vue({
         console.log('Dark Mode:', this.$q.dark.mode);
     },
     methods: {
-        showLoading () {
-            this.$q.loading.show();
-            setTimeout(() => {
-                this.$q.loading.hide();
-            }, 1000);
+        handleOpen (site) {
+            window.open(site);
         },
         handleClose () {
             window.opener = null;
