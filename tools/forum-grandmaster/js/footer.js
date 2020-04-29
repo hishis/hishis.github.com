@@ -11,5 +11,10 @@ const app = new Vue({
     el: '#app',
     data: {
         content: 'Hello HTML!'
+    },
+    created: function () {
+        console.log(this.content);
+        console.log(typeof window.forumGrandmaster);
+        console.log(window.forumGrandmaster);
     }
 })
