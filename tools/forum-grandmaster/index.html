@@ -26,30 +26,100 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.9.16/dist/quasar.umd.min.js"></script>
     <script src="/js/common.js"></script>
     <div id="app" class="animated fadeInDown">
-        <div class="q-pa-md q-gutter-sm">
-            <q-avatar color="primary" text-color="white">论</q-avatar>
-            <q-avatar color="primary" text-color="white">坛</q-avatar>
-            <q-avatar color="primary" text-color="white">大</q-avatar>
-            <q-avatar color="primary" text-color="white">师</q-avatar>
-        </div>
+        <div class="q-pa-md">
+            <q-layout view="lHh lpr lFf" container style="height: 400px" class="shadow-2 rounded-borders">
+                <q-header elevated>
+                    <q-bar>
+                        <q-icon name="laptop_chromebook"></q-icon>
+                        <div>论坛大师系统设置</div>
 
-        <div class="q-pa-md q-gutter-sm">
-            <q-bar>
-                <div class="cursor-pointer">File</div>
-                <div class="cursor-pointer">Edit</div>
-                <div class="cursor-pointer gt-xs">View</div>
-                <div class="cursor-pointer gt-xs">Window</div>
-                <div class="cursor-pointer">Help</div>
-                <q-space></q-space>
-                <q-btn dense flat icon="minimize"></q-btn>
-                <q-btn dense flat icon="crop_square"></q-btn>
-                <q-btn dense flat icon="close"></q-btn>
-            </q-bar>
-        </div>
+                        <q-space></q-space>
 
-        <div class="q-pa-md q-gutter-sm">
-            <q-btn label="恢复默认" id="default-settings" color="red animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
-            <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
+                        <q-btn dense flat icon="minimize"></q-btn>
+                        <q-btn dense flat icon="crop_square"></q-btn>
+                        <q-btn dense flat icon="close"></q-btn>
+                    </q-bar>
+
+                    <div class="q-pa-sm q-pl-md row items-center">
+                        <div class="cursor-pointer non-selectable">
+                            File
+                            <q-menu>
+                                <q-list dense style="min-width: 100px">
+                                    <q-item clickable v-close-popup>
+                                        <q-item-section>Open...</q-item-section>
+                                    </q-item>
+                                    <q-item clickable v-close-popup>
+                                        <q-item-section>New</q-item-section>
+                                    </q-item>
+
+                                    <q-separator></q-separator>
+
+                                    <q-item clickable>
+                                        <q-item-section>Preferences</q-item-section>
+                                        <q-item-section side>
+                                            <q-icon name="keyboard_arrow_right"></q-icon>
+                                        </q-item-section>
+
+                                        <q-menu anchor="top right" self="top left">
+                                            <q-list>
+                                                <q-item v-for="n in 3" :key="n" dense clickable>
+                                                    <q-item-section>Submenu Label</q-item-section>
+                                                    <q-item-section side>
+                                                        <q-icon name="keyboard_arrow_right"></q-icon>
+                                                    </q-item-section>
+                                                    <q-menu auto-close anchor="top right" self="top left">
+                                                        <q-list>
+                                                            <q-item v-for="n in 3" :key="n" dense clickable>
+                                                                <q-item-section>3rd level Label</q-item-section>
+                                                            </q-item>
+                                                        </q-list>
+                                                    </q-menu>
+                                                </q-item>
+                                            </q-list>
+                                        </q-menu>
+                                    </q-item>
+
+                                    <q-separator></q-separator>
+
+                                    <q-item clickable v-close-popup>
+                                        <q-item-section>Quit</q-item-section>
+                                    </q-item>
+                                </q-list>
+                            </q-menu>
+                        </div>
+
+                        <div class="q-ml-md cursor-pointer non-selectable">
+                            Edit
+                            <q-menu auto-close>
+                                <q-list dense style="min-width: 100px">
+                                    <q-item clickable>
+                                        <q-item-section>Cut</q-item-section>
+                                    </q-item>
+                                    <q-item clickable>
+                                        <q-item-section>Copy</q-item-section>
+                                    </q-item>
+                                    <q-item clickable>
+                                        <q-item-section>Paste</q-item-section>
+                                    </q-item>
+                                    <q-separator></q-separator>
+                                    <q-item clickable>
+                                        <q-item-section>Select All</q-item-section>
+                                    </q-item>
+                                </q-list>
+                            </q-menu>
+                        </div>
+                    </div>
+                </q-header>
+
+                <q-page-container>
+                    <q-page class="q-pa-md">
+                        <div class="q-pa-md q-gutter-sm">
+                            <q-btn label="恢复默认" id="default-settings" color="red animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
+                            <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
+                        </div>
+                    </q-page>
+                </q-page-container>
+            </q-layout>
         </div>
     </div>
     <script src="js/footer.js"></script>

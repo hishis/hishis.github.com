@@ -22,12 +22,21 @@ const app = new Vue({
         this.$q.dark.set('auto');
         console.log(this.content);
     },
+    mounted () {
+        console.log('Dark Mode:', this.$q.dark.mode);
+    },
     methods: {
         showLoading () {
             this.$q.loading.show();
             setTimeout(() => {
                 this.$q.loading.hide();
             }, 1000);
+        },
+        handleClose () {
+            window.opener = null;
+            window.open('', '_self');
+            window.close();
+            !!~window.navigator.userAgent.indexOf('Firefox') && window.location.replace('about:blank');
         },
         handleSettingsDefault () {
             this.FG.s = 0;
@@ -43,9 +52,7 @@ const app = new Vue({
                 window.opener = null;
                 window.open('', '_self');
                 window.close();
-                setTimeout(() => {
-                    window.location.reload();
-                }, 100);
+                !!~window.navigator.userAgent.indexOf('Firefox') && window.location.replace('about:blank');
             });
         },
         handleSettingsSave () {
