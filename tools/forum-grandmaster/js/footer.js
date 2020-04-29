@@ -10,6 +10,6 @@ window.scrollTo(0, 0);
 const app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Vue!'
+        content: 'Hello HTML!'
     }
 })
