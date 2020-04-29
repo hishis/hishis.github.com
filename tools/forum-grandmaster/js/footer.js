@@ -19,13 +19,8 @@ const app = new Vue({
         FG: window.forumGrandmaster,
     },
     created () {
+        this.$q.dark.set('auto');
         console.log(this.content);
-        console.log(typeof this.FG.m);
-        console.log(this.FG.m.size);
-        console.log(this.FG.m);
-        for (let i = 0; i < this.FG.m.size; i++) {
-            console.log(this.FG.m.get(i));
-        }
     },
     methods: {
         showLoading () {
@@ -33,9 +28,6 @@ const app = new Vue({
             setTimeout(() => {
                 this.$q.loading.hide();
             }, 1000);
-        },
-        handleDark () {
-            this.$q.dark.set(!this.$q.dark.isActive);
         },
         handleSettingsDefault () {
             this.FG.s = 0;
