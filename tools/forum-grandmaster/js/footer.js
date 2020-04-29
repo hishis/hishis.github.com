@@ -16,5 +16,10 @@ const app = new Vue({
         console.log(this.content);
         console.log(typeof window.forumGrandmaster);
         console.log(window.forumGrandmaster);
+    },
+    methods: {
+        handleDark: function () {
+            this.$q.dark.set(!this.$q.dark.mode);
+        }
     }
 })
