@@ -6,3 +6,10 @@ window.addEventListener('keydown', function (event) {
 }, false);
 
 window.scrollTo(0, 0);
+
+const app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!'
+    }
+})
