@@ -1,4 +1,10 @@
 User-agent: *
+Disallow: .asp$
+Disallow: .jsp$
+Disallow: .php$
+Disallow: /?
+Disallow: /*?*
+Disallow: /*=*
 Disallow: /admin
 Disallow: /api
 Disallow: /app
@@ -11,6 +17,9 @@ Disallow: /fake
 Disallow: /flag
 Disallow: /hack
 Disallow: /home
+Disallow: /index.asp?
+Disallow: /index.jsp?
+Disallow: /index.php?
 Disallow: /json
 Disallow: /public
 Disallow: /sdk
