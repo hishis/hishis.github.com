@@ -19,7 +19,7 @@ const app = new Vue({
     },
     methods: {
         handleDark: function () {
-            this.$q.dark.set(!this.$q.dark.mode);
+            this.$q.dark.set(!this.$q.dark.isActive);
         }
     }
 })
