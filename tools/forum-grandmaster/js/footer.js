@@ -7,6 +7,10 @@ window.addEventListener('keydown', function (event) {
 
 window.scrollTo(0, 0);
 
+if (typeof window.forumGrandmaster === 'undefined') {
+    window.location.href = 'https://github.com/hishis/forum-grandmaster-for-discuz';
+}
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -15,6 +19,12 @@ const app = new Vue({
     },
     created () {
         console.log(this.content);
+        console.log(typeof this.FG.m);
+        console.log(this.FG.m.size);
+        console.log(this.FG.m);
+        for (let i = 0; i < this.FG.m.size; i++) {
+            console.log(this.FG.m.get(i));
+        }
     },
     methods: {
         showLoading () {
