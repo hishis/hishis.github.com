@@ -26,16 +26,18 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.9.16/dist/quasar.umd.min.js"></script>
     <script src="/js/common.js"></script>
     <div id="app">
-        <p class="text-primary" @click="handleDark" v-text="content"></p>
+        <p class="text-primary" v-text="content"></p>
         <div class="q-pa-md q-gutter-sm">
-            <q-avatar color="primary" text-color="white">油</q-avatar>
-            <q-avatar color="primary" text-color="white">猴</q-avatar>
-            <q-avatar color="primary" text-color="white">脚</q-avatar>
-            <q-avatar color="primary" text-color="white">本</q-avatar>
             <q-avatar color="red" text-color="white">论</q-avatar>
             <q-avatar color="red" text-color="white">论</q-avatar>
             <q-avatar color="red" text-color="white">大</q-avatar>
             <q-avatar color="red" text-color="white">师</q-avatar>
+            <q-avatar color="primary" text-color="white">（</q-avatar>
+            <q-avatar color="primary" text-color="white">油</q-avatar>
+            <q-avatar color="primary" text-color="white">猴</q-avatar>
+            <q-avatar color="primary" text-color="white">脚</q-avatar>
+            <q-avatar color="primary" text-color="white">本</q-avatar>
+            <q-avatar color="primary" text-color="white" @click="handleDark">）</q-avatar>
         </div>
     </div>
     <script src="js/footer.js"></script>
