@@ -119,18 +119,20 @@
                             <q-radio disable v-model="fakeData['SCENE_MODE']" val="Home" label="家庭模式"></q-radio>
                             <q-radio disable v-model="fakeData['SCENE_MODE']" val="Office" label="办公模式"></q-radio>
                         </div>
+
                         <div class="q-px-sm">用户状态</div>
                         <div class="q-gutter-sm">
                             <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="None" label="隐藏图标"></q-radio>
                             <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Standard" label="标准图标"></q-radio>
                             <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Advanced" label="高级图标"></q-radio>
                         </div>
+
                         <div class="q-px-sm">大师徽章</div>
                         <div class="q-gutter-sm">
-                            <q-radio disable v-model="fakeData['DISPLAY_BADGE']" val="true" label="显示徽章"></q-radio>
-                            <q-radio disable v-model="fakeData['DISPLAY_BADGE']" val="false" label="隐藏徽章"></q-radio>
+                            <q-checkbox disable v-model="fakeData['DISPLAY_BADGE']" label="显示徽章"></q-checkbox>
+                            <q-checkbox disable v-model="!fakeData['DISPLAY_BADGE']" label="隐藏徽章"></q-checkbox>
                         </div>
-                        <div class="q-px-sm"></div>
+
                         <div class="q-pa-md q-gutter-sm">
                             <q-btn label="恢复默认" id="default-settings" color="red animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
                             <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
