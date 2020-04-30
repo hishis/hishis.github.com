@@ -140,15 +140,15 @@
 
                         <div class="q-px-sm">用户状态</div>
                         <div class="q-gutter-sm">
-                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="None" label="隐藏图标"></q-radio>
-                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Standard" label="标准图标"></q-radio>
-                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Advanced" label="高级图标"></q-radio>
+                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="None" label="默认没有"></q-radio>
+                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Standard" label="论坛状态"></q-radio>
+                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Advanced" label="真实状态"></q-radio>
                         </div>
 
                         <div class="q-px-sm">大师徽章</div>
                         <div class="q-gutter-sm">
+                            <q-checkbox disable v-model="!fakeData['DISPLAY_BADGE']" label="默认没有"></q-checkbox>
                             <q-checkbox disable v-model="fakeData['DISPLAY_BADGE']" label="显示徽章"></q-checkbox>
-                            <q-checkbox disable v-model="!fakeData['DISPLAY_BADGE']" label="没有徽章"></q-checkbox>
                         </div>
 
                         <div class="q-pa-md q-gutter-sm">
