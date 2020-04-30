@@ -18,9 +18,6 @@ const app = new Vue({
         content: 'Hello HTML!',
         FG: window.forumGrandmaster,
         dataChangeTracker: true,
-        fakeData2: {
-            SCENE_MODE: '',
-        },
     },
     created () {
         console.log(this.content);
