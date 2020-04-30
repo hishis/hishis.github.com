@@ -8,7 +8,7 @@ window.addEventListener('keydown', function (event) {
 window.scrollTo(0, 0);
 
 if (typeof window.forumGrandmaster === 'undefined') {
-    window.location.href = 'https://github.com/hishis/forum-grandmaster-for-discuz';
+    window.location.replace('https://github.com/hishis/forum-grandmaster-for-discuz');
     document.body.innerHTML = '';
 }
 
