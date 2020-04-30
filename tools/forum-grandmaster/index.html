@@ -31,7 +31,7 @@
                 <q-header elevated>
                     <q-bar>
                         <q-icon name="laptop_chromebook"></q-icon>
-                        <div>论坛大师系统设置</div>
+                        <div>Forum Grandmaster for Discuz!</div>
 
                         <q-space></q-space>
 
@@ -113,9 +113,15 @@
 
                 <q-page-container>
                     <q-page class="q-pa-md">
+                        <div class="q-px-sm">情景模式</div>
+                        <div class="q-gutter-sm">
+                            <q-radio v-model="fakeData['SCENE_MODE']" val="Standard" label="标准模式"></q-radio>
+                            <q-radio v-model="fakeData['SCENE_MODE']" val="Home" label="家庭模式"></q-radio>
+                            <q-radio v-model="fakeData['SCENE_MODE']" val="Office" label="办公模式"></q-radio>
+                        </div>
                         <div class="q-pa-md q-gutter-sm">
                             <q-btn label="恢复默认" id="default-settings" color="red animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
-                            <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
+                            <!-- <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn> -->
                         </div>
                     </q-page>
                 </q-page-container>

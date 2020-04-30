@@ -17,13 +17,26 @@ const app = new Vue({
     data: {
         content: 'Hello HTML!',
         FG: window.forumGrandmaster,
+        dataChangeTracker: true,
+        fakeData2: {
+            SCENE_MODE: '',
+        },
     },
     created () {
-        this.$q.dark.set('auto');
         console.log(this.content);
+        this.$q.dark.set('auto');
     },
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
+    },
+    computed: {
+        fakeData () {
+            let o = Object.create(null);
+            for (let [k, v] of this.FG.m) {
+                o[k] = v;
+            }
+            return this.dataChangeTracker && o;
+        }
     },
     methods: {
         handleOpen (site) {
@@ -41,15 +54,12 @@ const app = new Vue({
                 title: '提示信息',
                 message: '已经恢复默认设置',
             }).onOk(() => {
-                // console.log('OK')
+                // console.log('OK');
             }).onCancel(() => {
-                // console.log('Cancel')
+                // console.log('Cancel');
             }).onDismiss(() => {
-                // console.log('I am triggered on both OK and Cancel')
-                window.opener = null;
-                window.open('', '_self');
-                window.close();
-                !!~window.navigator.userAgent.indexOf('Firefox') && window.location.replace('about:blank');
+                // console.log('I am triggered on both OK and Cancel');
+                window.location.reload();
             });
         },
         handleSettingsSave () {
@@ -58,11 +68,11 @@ const app = new Vue({
                 title: '提示信息',
                 message: '所有设置已经保存',
             }).onOk(() => {
-                // console.log('OK')
+                // console.log('OK');
             }).onCancel(() => {
-                // console.log('Cancel')
+                // console.log('Cancel');
             }).onDismiss(() => {
-                // console.log('I am triggered on both OK and Cancel')
+                // console.log('I am triggered on both OK and Cancel');
             });
         }
     }
