@@ -112,6 +112,24 @@
                 </q-header>
 
                 <q-page-container>
+                    <q-dialog v-model="toolbar">
+                        <q-card>
+                            <q-toolbar>
+                                <q-avatar>
+                                    <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+                                </q-avatar>
+
+                                <q-toolbar-title><span class="text-weight-bold">论坛大师</span></q-toolbar-title>
+
+                                <q-btn flat round dense icon="close" v-close-popup></q-btn>
+                            </q-toolbar>
+
+                            <q-card-section>
+                                论坛大师系统设置页面正在开发。目前只能<span class="text-secondary">查看</span>和<span class="text-negative">恢复</span>默认设置，暂不支持<span class="text-primary">修改</span>设置。
+                            </q-card-section>
+                        </q-card>
+                    </q-dialog>
+
                     <q-page class="q-pa-md">
                         <div class="q-px-sm">场景模式</div>
                         <div class="q-gutter-sm">
@@ -134,7 +152,7 @@
                         </div>
 
                         <div class="q-pa-md q-gutter-sm">
-                            <q-btn label="恢复默认" id="default-settings" color="red animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
+                            <q-btn label="恢复默认" id="default-settings" color="negative animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
                             <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
                         </div>
                     </q-page>

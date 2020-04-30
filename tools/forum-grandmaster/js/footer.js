@@ -18,6 +18,7 @@ const app = new Vue({
         content: 'Hello HTML!',
         FG: window.forumGrandmaster,
         dataChangeTracker: true,
+        toolbar: false,
     },
     created () {
         console.log(this.content);
@@ -25,6 +26,9 @@ const app = new Vue({
     },
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
+        setTimeout(() => {
+            this.toolbar = true;
+        }, 200);
     },
     computed: {
         fakeData () {
