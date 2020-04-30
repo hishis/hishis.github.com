@@ -9,7 +9,7 @@ window.scrollTo(0, 0);
 
 if (typeof window.forumGrandmaster === 'undefined') {
     window.location.href = 'https://github.com/hishis/forum-grandmaster-for-discuz';
-    alert();
+    document.body.innerHTML = '';
 }
 
 const app = new Vue({
