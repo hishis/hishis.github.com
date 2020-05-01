@@ -32,7 +32,7 @@ const app = new Vue({
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
         setTimeout(() => {
-            this.toolbar = true;
+            this.bar = true;
         }, 200);
     },
     methods: {
