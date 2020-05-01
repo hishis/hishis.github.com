@@ -47,7 +47,6 @@ const app = new Vue({
             window.opener = null;
             window.open('', '_self');
             window.close();
-            !!~window.navigator.userAgent.indexOf('Firefox') && window.location.replace('about:blank');
         },
         handleSettingsDefault () {
             this.FG.s = 0;
