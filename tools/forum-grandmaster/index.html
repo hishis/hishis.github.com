@@ -15,7 +15,6 @@
     <link rel="canonical" href="https://hishis.github.io/tools/forum-grandmaster/">
     <link rel="dns-prefetch" href="//api.github.com">
     <link rel="dns-prefetch" href="//hunhun.appspot.com">
-    <link rel="prefetch" href="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
     <link rel="shortcut icon" href="https://cdn.quasar.dev/app-icons/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
@@ -115,18 +114,16 @@
                 </q-header>
 
                 <q-page-container>
-                    <q-dialog v-model="toolbar">
+                    <q-dialog v-model="bar" persistent>
                         <q-card>
-                            <q-toolbar>
-                                <q-avatar>
-                                    <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-                                </q-avatar>
-
-                                <q-toolbar-title><span class="text-weight-bold">论坛大师</span></q-toolbar-title>
-
-                                <q-btn flat round dense icon="close" v-close-popup></q-btn>
-                            </q-toolbar>
-
+                            <q-bar>
+                                <q-icon name="announcement"></q-icon>
+                                <div>论坛大师</div>
+                                <q-space></q-space>
+                                <q-btn dense flat icon="close" v-close-popup>
+                                    <q-tooltip>Close</q-tooltip>
+                                </q-btn>
+                            </q-bar>
                             <q-card-section>
                                 论坛大师系统设置页面正在开发。目前部分功能选项<span class="text-secondary">只能查看</span>，<span class="text-primary">不能修改</span>。
                             </q-card-section>

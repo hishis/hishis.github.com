@@ -19,7 +19,7 @@ const app = new Vue({
         FG: window.forumGrandmaster,
         dataChangeTracker: true,
         oo: null,
-        toolbar: false,
+        bar: false,
     },
     created () {
         this.$q.dark.set('auto');
