@@ -29,6 +29,22 @@
     <script src="/js/common.js"></script>
     <div id="app" class="animated fadeIn">
         <div class="q-pa-md">
+            <q-dialog v-model="bar" persistent>
+                <q-card>
+                    <q-bar>
+                        <q-icon name="notification_important"></q-icon>
+                        <div>公告</div>
+                        <q-space></q-space>
+                        <q-btn dense flat icon="close" v-close-popup>
+                            <q-tooltip>Close</q-tooltip>
+                        </q-btn>
+                    </q-bar>
+                    <q-card-section>
+                        论坛大师系统设置页面正在开发。目前部分功能选项<span class="text-secondary">只能查看</span>，<span class="text-primary">不能修改</span>。
+                    </q-card-section>
+                </q-card>
+            </q-dialog>
+
             <q-layout view="lHh lpr lFf" container style="height: 800px" class="shadow-2 rounded-borders">
                 <q-header elevated>
                     <q-bar>
@@ -114,22 +130,6 @@
                 </q-header>
 
                 <q-page-container>
-                    <q-dialog v-model="bar" persistent>
-                        <q-card>
-                            <q-bar>
-                                <q-icon name="announcement"></q-icon>
-                                <div>论坛大师</div>
-                                <q-space></q-space>
-                                <q-btn dense flat icon="close" v-close-popup>
-                                    <q-tooltip>Close</q-tooltip>
-                                </q-btn>
-                            </q-bar>
-                            <q-card-section>
-                                论坛大师系统设置页面正在开发。目前部分功能选项<span class="text-secondary">只能查看</span>，<span class="text-primary">不能修改</span>。
-                            </q-card-section>
-                        </q-card>
-                    </q-dialog>
-
                     <q-page class="q-pa-md">
                         <div class="q-px-sm">场景模式</div>
                         <div class="q-gutter-sm">
