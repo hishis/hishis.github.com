@@ -30,7 +30,7 @@
     <script src="/js/common.js"></script>
     <div id="app" class="animated fadeIn">
         <div class="q-pa-md">
-            <q-layout view="lHh lpr lFf" container style="height: 800px" class="shadow-2 rounded-borders">
+            <q-layout view="lHh lpr lFf" container style="height: 100%;" class="shadow-2 rounded-borders">
                 <q-header elevated>
                     <q-bar>
                         <q-icon name="laptop_chromebook"></q-icon>
@@ -158,6 +158,10 @@
                             <q-btn label="恢复默认" id="default-settings" color="negative animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
                             <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
                         </div>
+
+                        <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+                            <q-btn fab icon="keyboard_arrow_up" color="accent"></q-btn>
+                        </q-page-scroller>
                     </q-page>
                 </q-page-container>
             </q-layout>
