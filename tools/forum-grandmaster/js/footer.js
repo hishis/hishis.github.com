@@ -18,26 +18,22 @@ const app = new Vue({
         content: 'Hello HTML!',
         FG: window.forumGrandmaster,
         dataChangeTracker: true,
+        oo: null,
         toolbar: false,
     },
     created () {
-        console.log(this.content);
         this.$q.dark.set('auto');
+        let obj = Object.create(null);
+        for (let [k, v] of this.FG.m) {
+            obj[k] = v;
+        }
+        this.oo = obj;
     },
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
         setTimeout(() => {
             this.toolbar = true;
         }, 200);
-    },
-    computed: {
-        fakeData () {
-            let o = Object.create(null);
-            for (let [k, v] of this.FG.m) {
-                o[k] = v;
-            }
-            return this.dataChangeTracker && o;
-        }
     },
     methods: {
         handleOpen (site) {
@@ -49,7 +45,6 @@ const app = new Vue({
             window.close();
         },
         handleSettingsDefault () {
-            this.FG.s = 0;
             this.$q.dialog({
                 title: '提示信息',
                 message: '已经恢复默认设置',
@@ -63,7 +58,10 @@ const app = new Vue({
             });
         },
         handleSettingsSave () {
-            this.FG.s = 1;
+            let that = this;
+            Object.getOwnPropertyNames(that.oo).forEach(function(key){
+                that.FG.m.set(key, that.oo[key]);
+            });
             this.$q.dialog({
                 title: '提示信息',
                 message: '所有设置已经保存',

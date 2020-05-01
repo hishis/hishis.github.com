@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Forum Grandmaster</title>
     <link rel="canonical" href="https://hishis.github.io/tools/forum-grandmaster/">
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//hunhun.appspot.com">
+    <link rel="prefetch" href="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
     <link rel="shortcut icon" href="https://cdn.quasar.dev/app-icons/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
@@ -27,7 +30,7 @@
     <script src="/js/common.js"></script>
     <div id="app" class="animated fadeIn">
         <div class="q-pa-md">
-            <q-layout view="lHh lpr lFf" container style="height: 400px" class="shadow-2 rounded-borders">
+            <q-layout view="lHh lpr lFf" container style="height: 800px" class="shadow-2 rounded-borders">
                 <q-header elevated>
                     <q-bar>
                         <q-icon name="laptop_chromebook"></q-icon>
@@ -125,7 +128,7 @@
                             </q-toolbar>
 
                             <q-card-section>
-                                论坛大师系统设置页面正在开发。目前只能<span class="text-secondary">查看</span>和<span class="text-negative">恢复</span>默认设置，暂不支持<span class="text-primary">修改</span>设置。
+                                论坛大师系统设置页面正在开发。目前部分设置只能<span class="text-secondary">查看</span>，不能<span class="text-primary">修改</span>。
                             </q-card-section>
                         </q-card>
                     </q-dialog>
@@ -133,22 +136,22 @@
                     <q-page class="q-pa-md">
                         <div class="q-px-sm">场景模式</div>
                         <div class="q-gutter-sm">
-                            <q-radio disable v-model="fakeData['SCENE_MODE']" val="Standard" label="标准模式"></q-radio>
-                            <q-radio disable v-model="fakeData['SCENE_MODE']" val="Home" label="家庭模式"></q-radio>
-                            <q-radio disable v-model="fakeData['SCENE_MODE']" val="Office" label="办公模式"></q-radio>
+                            <q-radio v-model="oo['SCENE_MODE']" val="Standard" label="标准模式"></q-radio>
+                            <q-radio v-model="oo['SCENE_MODE']" val="Home" label="家庭模式"></q-radio>
+                            <q-radio v-model="oo['SCENE_MODE']" val="Office" label="办公模式"></q-radio>
                         </div>
 
                         <div class="q-px-sm">用户状态</div>
                         <div class="q-gutter-sm">
-                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="None" label="默认没有"></q-radio>
-                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Standard" label="论坛状态"></q-radio>
-                            <q-radio disable v-model="fakeData['DISPLAY_USERS_ONLINE_STATUS']" val="Advanced" label="真实状态"></q-radio>
+                            <q-radio v-model="oo['DISPLAY_USERS_ONLINE_STATUS']" val="None" label="默认没有"></q-radio>
+                            <q-radio v-model="oo['DISPLAY_USERS_ONLINE_STATUS']" val="Standard" label="论坛状态"></q-radio>
+                            <q-radio v-model="oo['DISPLAY_USERS_ONLINE_STATUS']" val="Advanced" label="真实状态"></q-radio>
                         </div>
 
                         <div class="q-px-sm">大师徽章</div>
                         <div class="q-gutter-sm">
-                            <q-checkbox disable v-model="!fakeData['DISPLAY_BADGE']" label="默认没有"></q-checkbox>
-                            <q-checkbox disable v-model="fakeData['DISPLAY_BADGE']" label="显示徽章"></q-checkbox>
+                            <q-checkbox disable v-model="!oo['DISPLAY_BADGE']" label="默认没有"></q-checkbox>
+                            <q-checkbox disable v-model="oo['DISPLAY_BADGE']" label="显示徽章"></q-checkbox>
                         </div>
 
                         <div class="q-pa-md q-gutter-sm">
