@@ -57,11 +57,13 @@ const app = new Vue({
                 window.location.reload();
             });
         },
-        handleSettingsSave () {
+        handleSettingsConvert () {
             let that = this;
             Object.getOwnPropertyNames(that.oo).forEach(function(key){
                 that.FG.m.set(key, that.oo[key]);
             });
+        },
+        handleSettingsSave () {
             this.$q.dialog({
                 title: '提示信息',
                 message: '所有设置已经保存',

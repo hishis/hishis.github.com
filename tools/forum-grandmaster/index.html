@@ -133,27 +133,26 @@
                     <q-page class="q-pa-md">
                         <div class="q-px-sm">场景模式</div>
                         <div class="q-gutter-sm">
-                            <q-radio v-model="oo['SCENE_MODE']" val="Standard" label="标准模式"></q-radio>
-                            <q-radio v-model="oo['SCENE_MODE']" val="Home" label="家庭模式"></q-radio>
-                            <q-radio v-model="oo['SCENE_MODE']" val="Office" label="办公模式"></q-radio>
+                            <q-radio label="标准模式" v-model="oo.SCENE_MODE" val="Standard"></q-radio>
+                            <q-radio label="家庭模式" v-model="oo.SCENE_MODE" val="Home"></q-radio>
+                            <q-radio label="办公模式" v-model="oo.SCENE_MODE" val="Office"></q-radio>
                         </div>
 
                         <div class="q-px-sm">用户状态</div>
                         <div class="q-gutter-sm">
-                            <q-radio v-model="oo['DISPLAY_USERS_ONLINE_STATUS']" val="None" label="默认没有"></q-radio>
-                            <q-radio v-model="oo['DISPLAY_USERS_ONLINE_STATUS']" val="Basic" label="基本状态"></q-radio>
-                            <q-radio v-model="oo['DISPLAY_USERS_ONLINE_STATUS']" val="Advanced" label="高级状态"></q-radio>
+                            <q-radio label="默认没有" v-model="oo.DISPLAY_USERS_ONLINE_STATUS" val="None"></q-radio>
+                            <q-radio label="基本状态" v-model="oo.DISPLAY_USERS_ONLINE_STATUS" val="Basic"></q-radio>
+                            <q-radio label="高级状态" v-model="oo.DISPLAY_USERS_ONLINE_STATUS" val="Advanced"></q-radio>
                         </div>
 
                         <div class="q-px-sm">大师徽章</div>
                         <div class="q-gutter-sm">
-                            <q-checkbox disable v-model="!oo['DISPLAY_BADGE']" label="默认没有"></q-checkbox>
-                            <q-checkbox disable v-model="oo['DISPLAY_BADGE']" label="显示徽章"></q-checkbox>
+                            <q-checkbox disable label="显示徽章" v-model="oo.DISPLAY_BADGE"></q-checkbox>
                         </div>
 
                         <div class="q-pa-md q-gutter-sm">
                             <q-btn label="恢复默认" id="default-settings" color="negative animated zoomIn delay-1s" icon="restore" @click="handleSettingsDefault"></q-btn>
-                            <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @click="handleSettingsSave"></q-btn>
+                            <q-btn label="保存设置" id="save-settings" color="primary animated zoomIn delay-1s" icon="save" @mouseenter="handleSettingsConvert" @click="handleSettingsSave"></q-btn>
                         </div>
 
                         <q-page-scroller position="bottom-right" :scroll-offset="120" :offset="[16, 16]">
