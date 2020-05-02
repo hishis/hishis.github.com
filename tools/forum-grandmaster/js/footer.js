@@ -17,7 +17,6 @@ const app = new Vue({
     data: {
         content: 'Hello HTML!',
         FG: window.forumGrandmaster,
-        dataChangeTracker: true,
         oo: null,
         bar: false,
     },
