@@ -140,26 +140,31 @@
                             </q-item>
                         </q-list>
 
-                        <div class="q-px-sm">场景模式</div>
+                        <div class="q-pt-sm"></div>
+
+                        <div class="q-px-sm q-pt-sm">场景模式</div>
                         <div class="q-gutter-sm">
                             <q-radio label="标准模式" v-model="oo.SCENE_MODE" val="Standard"></q-radio>
                             <q-radio label="家庭模式" v-model="oo.SCENE_MODE" val="Home"></q-radio>
                             <q-radio label="办公模式" v-model="oo.SCENE_MODE" val="Office"></q-radio>
                         </div>
 
-                        <div class="q-px-sm">用户状态</div>
+                        <div class="q-px-sm q-pt-sm">用户状态</div>
                         <div class="q-gutter-sm">
                             <q-radio label="默认没有" v-model="oo.DISPLAY_USERS_ONLINE_STATUS" val="None"></q-radio>
                             <q-radio label="基本状态" v-model="oo.DISPLAY_USERS_ONLINE_STATUS" val="Basic"></q-radio>
                             <q-radio label="高级状态" v-model="oo.DISPLAY_USERS_ONLINE_STATUS" val="Advanced"></q-radio>
                         </div>
 
-                        <div class="q-px-sm">大师徽章</div>
+                        <div class="q-px-sm q-pt-sm">大师徽章</div>
                         <div class="q-gutter-sm">
-                            <q-checkbox disable label="显示徽章" v-model="oo.DISPLAY_BADGE"></q-checkbox>
+                            <q-checkbox label="显示徽章" v-model="oo.DISPLAY_BADGE"></q-checkbox>
+                            <p class="q-px-sm q-mt-none text-grey">开启论坛大师并勾选此项的用户才可以看到<span class="text-primary">大师徽章</span>。</p>
                         </div>
 
-                        <div class="q-px-sm">
+                        <div class="q-pt-sm"></div>
+
+                        <div class="q-px-sm q-pt-sm">
                             <q-btn label="恢复默认" id="default-settings" color="negative" icon="restore" @click="handleSettingsDefault"></q-btn>
                             <q-btn label="保存设置" id="save-settings" color="primary" icon="save" @mouseenter="handleSettingsConvert" @click="handleSettingsSave"></q-btn>
                         </div>
