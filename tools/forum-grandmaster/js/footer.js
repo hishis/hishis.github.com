@@ -1,7 +1,7 @@
-window.addEventListener('contextmenu', function (event) {
+window.addEventListener('contextmenu', event => {
     event.preventDefault();
 }, false);
-window.addEventListener('keydown', function (event) {
+window.addEventListener('keydown', event => {
     event.preventDefault();
 }, false);
 
@@ -31,7 +31,7 @@ const app = new Vue({
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
         setTimeout(() => {
-            this.bar = true;
+            this.bar = !!this.FG.data.from;
         }, 200);
     },
     methods: {
@@ -44,6 +44,8 @@ const app = new Vue({
             window.close();
         },
         handleSettingsDefault () {
+            // Clear all settings
+            this.oo = {};
             this.$q.dialog({
                 title: '提示信息',
                 message: '已经恢复默认设置',
@@ -63,6 +65,7 @@ const app = new Vue({
             });
         },
         handleSettingsSave () {
+            // Save all settings
             this.$q.dialog({
                 title: '提示信息',
                 message: '所有设置已经保存',
