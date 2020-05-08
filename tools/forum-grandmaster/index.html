@@ -29,7 +29,7 @@
     <script src="/js/common.js"></script>
     <div id="app" class="animate__animated animate__zoomIn">
         <div class="q-pa-md">
-            <q-layout view="lHh lpr lFf" container style="height: 800px" class="shadow-2 rounded-borders">
+            <q-layout view="lHh lpr lFf" container style="height: 800px;" class="shadow-2 rounded-borders">
                 <q-header elevated>
                     <q-bar>
                         <q-icon name="laptop_chromebook"></q-icon>
@@ -115,6 +115,31 @@
 
                 <q-page-container>
                     <q-page class="q-pa-md">
+                        <q-list bordered separator>
+                            <q-item>
+                                <q-item-section>
+                                    <q-item-label>扩展名字：<span v-text="FG.extensions.name" class="text-primary"></span></q-item-label>
+                                    <q-item-label>扩展版本：<span v-text="FG.extensions.version" class="text-positive"></span></q-item-label>
+                                </q-item-section>
+                            </q-item>
+
+                            <q-item clickable v-ripple>
+                                <q-item-section @click="handleOpen('https://greasyfork.org/scripts/400250');">
+                                    <q-item-label>脚本名字：<span v-text="FG.script.name" class="text-primary"></span></q-item-label>
+                                    <q-item-label>脚本版本：<span v-text="FG.script.version" class="text-positive"></span></q-item-label>
+                                </q-item-section>
+                            </q-item>
+
+                            <q-item>
+                                <q-item-section>
+                                    <q-item-label>用户代理：<span v-text="FG.data.ua" class="text-grey"></span></q-item-label>
+                                    <q-item-label>默认语言：<span v-text="FG.data.lang" class="text-grey"></span></q-item-label>
+                                </q-item-section>
+                            </q-item>
+                        </q-list>
+
+                        <div class="q-px-sm"></div>
+
                         <div class="q-px-sm">场景模式</div>
                         <div class="q-gutter-sm">
                             <q-radio label="标准模式" v-model="oo.SCENE_MODE" val="Standard"></q-radio>
@@ -134,7 +159,7 @@
                             <q-checkbox disable label="显示徽章" v-model="oo.DISPLAY_BADGE"></q-checkbox>
                         </div>
 
-                        <div class="q-pa-md q-gutter-sm">
+                        <div class="q-px-sm">
                             <q-btn label="恢复默认" id="default-settings" color="negative animate__animated animate__pulse animate__delay-2s" icon="restore" @click="handleSettingsDefault"></q-btn>
                             <q-btn label="保存设置" id="save-settings" color="primary animate__animated animate__pulse animate__delay-2s" icon="save" @mouseenter="handleSettingsConvert" @click="handleSettingsSave"></q-btn>
                         </div>
