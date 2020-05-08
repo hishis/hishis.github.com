@@ -39,6 +39,13 @@ const app = new Vue({
             this.notification.content = '论坛大师系统设置页面正在开发。目前<span class="text-secondary">部分功能</span>选项<span class="text-positive">只能查看</span>，<span class="text-primary">不能修改</span>。';
             this.bar = !!this.FG.data.from;
         }, 1000);
+        setTimeout(() => {
+            if (typeof this.FG.script.version === 'string' && typeof this.FG.script.ServerVersion === 'string' && this.FG.script.version !== this.FG.script.ServerVersion) {
+                this.notification.title = '论坛大师更新提示';
+                this.notification.content = '论坛大师油猴脚本<span class="text-primary">本地版本</span>：<span class="text-positive">' + this.FG.script.version + '</span>，<span class="text-primary">最新版本</span>：<span class="text-positive">' + this.FG.script.ServerVersion + '</span>。建议您更新之后再修改设置，以免引起设置混乱。';
+                this.bar = true;
+            }
+        }, 10000);
     },
     methods: {
         handleOpen (site) {
