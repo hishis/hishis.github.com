@@ -41,8 +41,8 @@ const app = new Vue({
         }, 1000);
         setTimeout(() => {
             if (typeof this.FG.script.version === 'string' && typeof this.FG.script.ServerVersion === 'string' && this.FG.script.version !== this.FG.script.ServerVersion) {
-                this.notification.title = '论坛大师更新提示';
-                this.notification.content = '论坛大师油猴脚本<span class="text-primary">本地版本</span>：<span class="text-positive">' + this.FG.script.version + '</span>，<span class="text-primary">最新版本</span>：<span class="text-positive">' + this.FG.script.ServerVersion + '</span>。建议您更新之后再修改设置，以免引起设置混乱。';
+                this.notification.title = '论坛大师新版发布';
+                this.notification.content = '<p class="q-mb-none"><span class="text-primary">本地版本</span>：<span class="text-positive">' + this.FG.script.version + '</span></p><p class="q-mb-none"><span class="text-primary">最新版本</span>：<span class="text-positive">' + this.FG.script.ServerVersion + '</span></p><p class="q-mb-none">建议更新之后再修改设置，以免引起设置混乱！</p>';
                 this.bar = true;
             }
         }, 10000);
