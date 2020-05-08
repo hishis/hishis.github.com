@@ -34,11 +34,11 @@ const app = new Vue({
     },
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
-        setTimeout(() => {
+        /* setTimeout(() => {
             this.notification.title = '系统提示';
             this.notification.content = '论坛大师系统设置页面正在开发。目前<span class="text-secondary">部分功能</span>选项<span class="text-positive">只能查看</span>，<span class="text-primary">不能修改</span>。';
             this.bar = !!this.FG.data.from;
-        }, 1000);
+        }, 1000); */
         setTimeout(() => {
             if (typeof this.FG.script.version === 'string' && typeof this.FG.script.ServerVersion === 'string' && this.FG.script.version !== this.FG.script.ServerVersion) {
                 this.notification.title = '论坛大师新版发布';
