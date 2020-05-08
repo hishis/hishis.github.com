@@ -32,7 +32,7 @@ const app = new Vue({
         console.log('Dark Mode:', this.$q.dark.mode);
         setTimeout(() => {
             this.bar = !!this.FG.data.from;
-        }, 200);
+        }, 2000);
     },
     methods: {
         handleOpen (site) {
