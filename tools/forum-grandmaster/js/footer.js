@@ -66,6 +66,13 @@ const app = new Vue({
         handleOpen (site) {
             window.open(site);
         },
+        handleScreen () {
+            if (document.fullscreenElement === null) {
+                document.body.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        },
         handleClose () {
             window.opener = null;
             window.open('', '_self');
