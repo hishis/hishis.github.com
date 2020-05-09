@@ -40,10 +40,25 @@ const app = new Vue({
             this.bar = !!this.FG.data.from;
         }, 1000); */
         setTimeout(() => {
-            if (typeof this.FG.script.version === 'string' && typeof this.FG.script.ServerVersion === 'string' && this.FG.script.version !== this.FG.script.ServerVersion) {
+            if (typeof this.FG.script.ServerVersion === 'string' && typeof this.FG.script.version === 'string' && this.FG.script.ServerVersion !== this.FG.script.version) {
                 this.notification.title = '论坛大师新版发布';
-                this.notification.content = '<p class="q-mb-none"><span class="text-primary">本地版本</span>：<span class="text-positive">' + this.FG.script.version + '</span></p><p class="q-mb-none"><span class="text-primary">最新版本</span>：<span class="text-positive">' + this.FG.script.ServerVersion + '</span></p><p class="q-mb-none">建议更新之后再修改设置，以免引起设置混乱！</p>';
-                this.bar = true;
+                this.notification.content = '<p class="q-mb-none"><span class="text-primary">最新版本</span>：<span class="text-positive">' + this.FG.script.ServerVersion + '</span></p><p class="q-mb-none"><span class="text-primary">本地版本</span>：<span class="text-positive">' + this.FG.script.version + '</span></p><p class="q-mb-none">建议更新之后再修改设置，以免引起设置混乱！</p>';
+                // this.bar = true;
+
+                this.$q.dialog({
+                    title: this.notification.title,
+                    message: this.notification.content,
+                    html: true,
+                    cancel: true,
+                    persistent: true,
+                }).onOk(() => {
+                    // console.log('>>>> OK')
+                    window.open('https://greasyfork.org/scripts/400250');
+                }).onCancel(() => {
+                    // console.log('>>>> Cancel')
+                }).onDismiss(() => {
+                    // console.log('I am triggered on both OK and Cancel')
+                })
             }
         }, 10000);
     },
