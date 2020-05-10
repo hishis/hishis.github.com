@@ -60,7 +60,7 @@ const app = new Vue({
                     // console.log('I am triggered on both OK and Cancel')
                 })
             }
-        }, 10000);
+        }, 6666);
     },
     methods: {
         handleOpen (site) {
