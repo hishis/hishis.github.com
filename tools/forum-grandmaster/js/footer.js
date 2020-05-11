@@ -48,9 +48,8 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    console.log(typeof this.FG.data.GitHub);
-                    console.log(this.FG.data.GitHub);
-                    window.open('https://greasyfork.org/scripts/400250');
+                    this.FG.data.home = this.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
+                    window.open(this.FG.data.home);
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
                 }).onDismiss(() => {
