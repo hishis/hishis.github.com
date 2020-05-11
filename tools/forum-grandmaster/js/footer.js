@@ -34,6 +34,7 @@ const app = new Vue({
     },
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
+        moment.locale('zh-CN');
         /* setTimeout(() => {
             this.notification.title = '系统提示';
             this.notification.content = '论坛大师系统设置页面正在开发。目前<span class="text-secondary">部分功能</span>选项<span class="text-positive">只能查看</span>，<span class="text-primary">不能修改</span>。';
