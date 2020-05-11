@@ -26,6 +26,7 @@ const app = new Vue({
     },
     created () {
         this.$q.dark.set('auto');
+        this.FG.data.home = this.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
         let obj = Object.create(null);
         for (let [k, v] of this.FG.m) {
             obj[k] = v;
@@ -48,11 +49,6 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    if (this.FG.data.GitHub) {
-                        this.FG.data.home = 'https://github.com/hishis/forum-grandmaster-for-discuz';
-                    } else {
-                        this.FG.data.home = 'https://greasyfork.org/scripts/400250';
-                    }
                     window.open(this.FG.data.home);
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
@@ -64,7 +60,11 @@ const app = new Vue({
     },
     methods: {
         handleOpen (site) {
-            window.open(site);
+            let href = site;
+            if (href === 'home') {
+                href = this.FG.data.home;
+            }
+            window.open(href);
         },
         handleScreen () {
             if (document.fullscreenElement === null) {
