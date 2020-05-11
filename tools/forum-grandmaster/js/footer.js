@@ -48,6 +48,8 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
+                    console.log(typeof this.FG.data.GitHub);
+                    console.log(this.FG.data.GitHub);
                     window.open('https://greasyfork.org/scripts/400250');
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
