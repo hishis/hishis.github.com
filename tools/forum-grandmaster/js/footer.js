@@ -35,6 +35,7 @@ const app = new Vue({
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
         moment.locale(window.navigator.language);
+        let that = this;
         !!this.FG.data.GitHub || setTimeout(() => {
             if (typeof this.FG.script.ServerVersion === 'string' && typeof this.FG.script.version === 'string' && this.FG.script.ServerVersion !== this.FG.script.version) {
                 this.notification.title = '论坛大师新版发布';
@@ -48,8 +49,8 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    this.FG.data.home = this.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
-                    window.open(this.FG.data.home);
+                    that.FG.data.home = that.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
+                    window.open(that.FG.data.home);
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
                 }).onDismiss(() => {
