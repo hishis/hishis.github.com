@@ -43,7 +43,7 @@ const app = new Vue({
         setTimeout(() => {
             if (typeof this.FG.script.ServerVersion === 'string' && typeof this.FG.script.version === 'string' && this.FG.script.ServerVersion !== this.FG.script.version) {
                 this.notification.title = '论坛大师新版发布';
-                let brackets = (typeof this.FG.data.update_time === 'string') ? '（<span class="text-secondary">' + this.FG.data.update_time + '</span>）' : '';
+                let brackets = (typeof this.FG.data.update_time === 'string') ? '（<span class="text-secondary">' + moment(this.FG.data.update_time).format('lll') + '</span>）' : '';
                 this.notification.content = '<p class="q-mb-none"><span class="text-primary">最新版本</span>：<span class="text-red">' + this.FG.script.ServerVersion + '</span>' + brackets + '</p><p class="q-mb-none"><span class="text-primary">本地版本</span>：<span class="text-warning">' + this.FG.script.version + '</span></p><p class="q-mb-none">建议更新之后再修改设置，以免引起设置混乱！</p>';
                 // this.bar = true;
 
