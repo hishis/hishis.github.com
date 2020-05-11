@@ -40,7 +40,7 @@ const app = new Vue({
             this.notification.content = '论坛大师系统设置页面正在开发。目前<span class="text-secondary">部分功能</span>选项<span class="text-positive">只能查看</span>，<span class="text-primary">不能修改</span>。';
             this.bar = !!this.FG.data.from;
         }, 1000); */
-        setTimeout(() => {
+        !!this.FG.data.GitHub || setTimeout(() => {
             if (typeof this.FG.script.ServerVersion === 'string' && typeof this.FG.script.version === 'string' && this.FG.script.ServerVersion !== this.FG.script.version) {
                 this.notification.title = '论坛大师新版发布';
                 let brackets = (typeof this.FG.data.update_time === 'string') ? '（<span class="text-secondary">' + moment(this.FG.data.update_time).format('lll') + '</span>）' : '';
