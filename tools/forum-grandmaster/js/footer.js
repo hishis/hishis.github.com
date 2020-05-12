@@ -27,6 +27,7 @@ const app = new Vue({
     created () {
         this.$q.dark.set('auto');
         this.FG.data.home = this.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
+        this.FG.data.updateURL = this.FG.data.GitHub ? 'https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()) : 'https://greasyfork.org/scripts/400250/code/main.user.js';
         let obj = Object.create(null);
         for (let [k, v] of this.FG.m) {
             obj[k] = v;
