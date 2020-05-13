@@ -37,11 +37,38 @@ const app = new Vue({
     mounted () {
         console.log('Dark Mode:', this.$q.dark.mode);
         moment.locale(window.navigator.language);
+        if (typeof this.FG.data.GitHub !== 'boolean') {
+            setTimeout(() => {
+                this.notification.title = '论坛大师';
+                this.notification.content = '<p>这是一个重要更新，必需更新之后才能使用设置功能。</p><p>点击 <span class="text-primary">OK</span> 安装新版（推荐），或者点击 <span class="text-grey">CANCEL</span> 安装旧版。</p>';
+                this.$q.dialog({
+                    title: this.notification.title,
+                    message: this.notification.content,
+                    html: true,
+                    cancel: true,
+                    persistent: true,
+                }).onOk(() => {
+                    // console.log('>>>> OK')
+                    window.open(this.FG.data.home);
+                }).onCancel(() => {
+                    // console.log('>>>> Cancel')
+                    window.open('https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()));
+                }).onDismiss(() => {
+                    // console.log('I am triggered on both OK and Cancel')
+                    window.open('https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()));
+                })
+            }, 1234);
+            setTimeout(() => {
+                if (!!document.getElementsByTagName('main').length) {
+                    document.getElementsByTagName('main')[0].style.display = 'none';
+                }
+            }, 2222);
+        }
         !!this.FG.data.GitHub || setTimeout(() => {
-            if (typeof this.FG.script.ServerVersion === 'string' && typeof this.FG.script.version === 'string' && this.FG.script.ServerVersion !== this.FG.script.version) {
+            if (typeof this.FG.data.version === 'string' && !!this.FG.data.version && typeof this.FG.script.version === 'string' && this.FG.data.version !== this.FG.script.version) {
                 this.notification.title = '论坛大师新版发布';
                 let brackets = (typeof this.FG.data.update_time === 'string') ? '（<span class="text-secondary">' + moment(this.FG.data.update_time).format('lll') + '</span>）' : '';
-                this.notification.content = '<p class="q-mb-none"><span class="text-primary">最新版本</span>：<span class="text-red">' + this.FG.script.ServerVersion + '</span>' + brackets + '</p><p class="q-mb-none"><span class="text-primary">本地版本</span>：<span class="text-warning">' + this.FG.script.version + '</span></p><p class="q-mb-none">建议更新之后再修改设置，以免引起设置混乱！</p>';
+                this.notification.content = '<p class="q-mb-none"><span class="text-primary">最新版本</span>：<span class="text-red">' + this.FG.data.version + '</span>' + brackets + '</p><p class="q-mb-none"><span class="text-primary">本地版本</span>：<span class="text-warning">' + this.FG.script.version + '</span></p><p class="q-mb-none">建议更新之后再修改设置，以免引起设置混乱！</p>';
                 this.$q.dialog({
                     title: this.notification.title,
                     message: this.notification.content,
@@ -57,7 +84,7 @@ const app = new Vue({
                     // console.log('I am triggered on both OK and Cancel')
                 })
             }
-        }, 6666);
+        }, 4444);
     },
     methods: {
         handleOpen (site) {
