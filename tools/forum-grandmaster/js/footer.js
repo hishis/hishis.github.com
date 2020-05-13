@@ -40,7 +40,7 @@ const app = new Vue({
         if (typeof this.FG.data.GitHub !== 'boolean') {
             setTimeout(() => {
                 this.notification.title = '论坛大师';
-                this.notification.content = '<p>这是一个重要更新，必需更新之后才能使用设置功能。</p><p>点击 <span class="text-primary">OK</span> 安装新版（推荐），或者点击 <span class="text-grey">CANCEL</span> 安装旧版。</p>';
+                this.notification.content = '<p>这是一个重要更新，必需更新之后才能使用设置功能。</p><p>点击 <span class="text-primary">OK</span> 安装新版（推荐），或者点击 <span>CANCEL</span> 安装旧版。</p>';
                 this.$q.dialog({
                     title: this.notification.title,
                     message: this.notification.content,
