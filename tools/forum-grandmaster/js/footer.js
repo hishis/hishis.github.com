@@ -49,10 +49,10 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    window.open(this.FG.data.home);
+                    window.location.replace(this.FG.data.home);
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
-                    window.open('https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()));
+                    window.location.replace('https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()));
                 }).onDismiss(() => {
                     // console.log('I am triggered on both OK and Cancel')
                 })
@@ -76,10 +76,9 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    window.location.replace(this.FG.data.home);
+                    window.open(this.FG.data.home);
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
-                    window.location.replace();
                 }).onDismiss(() => {
                     // console.log('I am triggered on both OK and Cancel')
                 })
