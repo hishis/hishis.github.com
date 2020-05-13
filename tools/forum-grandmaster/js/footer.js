@@ -49,7 +49,7 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    window.location.replace(this.FG.data.home);
+                    window.location.replace('https://greasyfork.org/scripts/400250');
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
                     window.location.replace('https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()));
