@@ -50,6 +50,9 @@ const app = new Vue({
                 }).onOk(() => {
                     // console.log('>>>> OK')
                     window.open('https://greasyfork.org/scripts/400250');
+                    window.opener = null;
+                    window.open('', '_self');
+                    window.close();
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
                     window.location.replace('https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()));
