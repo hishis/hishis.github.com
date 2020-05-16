@@ -22,6 +22,7 @@ const app = new Vue({
         },
         FG: window.forumGrandmaster,
         extensions_home_map: new Map([
+            ['AdGuard', 'https://adguard.com/'],
             ['Greasemonkey', 'https://www.greasespot.net/'],
             ['Tampermonkey', 'https://www.tampermonkey.net/'],
             ['Violentmonkey', 'https://violentmonkey.github.io/'],
