@@ -117,15 +117,15 @@
                 <q-page-container>
                     <q-page class="q-pa-md">
                         <q-list bordered separator>
-                            <q-item>
-                                <q-item-section>
+                            <q-item clickable v-ripple>
+                                <q-item-section @click="handleOpen('Extensions Home');">
                                     <q-item-label>扩展名字：<span v-text="FG.extensions.name" class="text-primary"></span></q-item-label>
                                     <q-item-label>扩展版本：<span v-text="FG.extensions.version" class="text-positive"></span></q-item-label>
                                 </q-item-section>
                             </q-item>
 
                             <q-item clickable v-ripple>
-                                <q-item-section @click="handleOpen('home');">
+                                <q-item-section @click="handleOpen('Script Home');">
                                     <q-item-label>脚本名字：<span v-text="FG.script.name" class="text-primary"></span></q-item-label>
                                     <q-item-label>脚本版本：<span v-text="FG.script.version" class="text-positive"></span></q-item-label>
                                 </q-item-section>

@@ -21,12 +21,18 @@ const app = new Vue({
             content: '',
         },
         FG: window.forumGrandmaster,
+        extensions_home_map: new Map([
+            ['Greasemonkey', 'https://www.greasespot.net/'],
+            ['Tampermonkey', 'https://www.tampermonkey.net/'],
+            ['Violentmonkey', 'https://violentmonkey.github.io/'],
+        ]),
         oo: null,
         bar: false,
     },
     created () {
         this.$q.dark.set('auto');
-        this.FG.data.home = this.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
+        this.FG.extensions.home = this.extensions_home_map.get(this.FG.extensions.name);
+        this.FG.script.home = this.FG.data.GitHub ? 'https://github.com/hishis/forum-grandmaster-for-discuz' : 'https://greasyfork.org/scripts/400250';
         this.FG.data.updateURL = this.FG.data.GitHub ? 'https://cdn.jsdelivr.net/gh/hishis/forum-grandmaster-for-discuz/main.user.js?r='.concat(Math.random()) : 'https://greasyfork.org/scripts/400250/code/main.user.js';
         let obj = Object.create(null);
         for (let [k, v] of this.FG.m) {
@@ -91,8 +97,17 @@ const app = new Vue({
     methods: {
         handleOpen (site) {
             let href = site;
-            if (href === 'home') {
-                href = this.FG.data.home;
+            switch (true) {
+                case href === 'Extensions Home':
+                    href = this.FG.extensions.home;
+                    break;
+
+                case href === 'Script Home':
+                    href = this.FG.script.home;
+                    break;
+
+                default:
+                    break;
             }
             window.open(href);
         },
