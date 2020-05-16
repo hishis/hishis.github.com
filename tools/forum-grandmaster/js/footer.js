@@ -86,7 +86,7 @@ const app = new Vue({
                     persistent: true,
                 }).onOk(() => {
                     // console.log('>>>> OK')
-                    window.open(this.FG.data.home);
+                    window.open(this.FG.script.home);
                 }).onCancel(() => {
                     // console.log('>>>> Cancel')
                 }).onDismiss(() => {
