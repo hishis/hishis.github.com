@@ -170,6 +170,30 @@
                             <q-btn label="保存设置" id="save-settings" color="primary" icon="save" @mouseenter="handleSettingsConvert" @click="handleSettingsSave"></q-btn>
                         </div>
 
+                        <div class="q-pt-sm"></div>
+
+                        <q-list bordered separator>
+                            <q-item clickable v-ripple>
+                                <q-item-section>
+                                    <q-item-label>节点名字：<span class="text-primary">论坛大师（香港01）</span></q-item-label>
+                                    <q-item-label>服务器地址：<span class="text-primary">18.162.113.137</span></q-item-label>
+                                    <q-item-label>服务器端口：<span class="text-primary">12345</span></q-item-label>
+                                    <q-item-label>密码：<span class="text-primary">Master</span></q-item-label>
+                                    <q-item-label>加密：<span class="text-primary">aes-256-gcm</span></q-item-label>
+                                </q-item-section>
+                            </q-item>
+
+                            <q-item clickable v-ripple>
+                                <q-item-section>
+                                    <q-item-label>节点名字：<span class="text-primary">论坛大师（香港02）</span></q-item-label>
+                                    <q-item-label>服务器地址：<span class="text-primary">18.162.113.137</span></q-item-label>
+                                    <q-item-label>服务器端口：<span class="text-primary">54321</span></q-item-label>
+                                    <q-item-label>密码：<span class="text-primary">Master</span></q-item-label>
+                                    <q-item-label>加密：<span class="text-primary">xchacha20-ietf-poly1305</span></q-item-label>
+                                </q-item-section>
+                            </q-item>
+                        </q-list>
+
                         <q-page-scroller position="bottom-right" :scroll-offset="120" :offset="[16, 16]">
                             <q-btn fab icon="keyboard_arrow_up" color="primary"></q-btn>
                         </q-page-scroller>
