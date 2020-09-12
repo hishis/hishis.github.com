@@ -44,15 +44,3 @@ if (/(Android|iPhone|Mobile|OppoBrowser)/.test(window.navigator.userAgent)) {
 } else {
     device = 'd';
 }
-
-// Global site tag (gtag.js) - Google Analytics
-(function () {
-    let script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-53798001-1';
-    script.async = true;
-    document.head.appendChild(script);
-})();
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('config', 'UA-53798001-1');
